@@ -104,25 +104,30 @@
   }
 
   // ---------- rendering claims / ledger / metrics / roi ----------
-  let map, claimCount = 0, verifiedCount = 0, flagCount = 0, srcCount = 0;
+  let map, claimCount = 0, verifiedCount = 0, flagCount = 0, reviewCount = 0, srcCount = 0;
   function resetStage(target, mode, model) {
     $('stage').classList.add('on'); $('hero').style.display = 'none'; $('punch').classList.remove('on');
     $('reason').innerHTML = ''; $('ledger').innerHTML = ''; $('roi').innerHTML = ''; $('metrics').innerHTML = '';
     $('target').textContent = target; $('modeltag').textContent = model || (mode === 'replay' ? 'verified replay' : 'live');
     $('mode').textContent = mode === 'replay' ? 'replay · verified' : 'live';
-    claimCount = 0; verifiedCount = 0; flagCount = 0; srcCount = 0;
+    claimCount = 0; verifiedCount = 0; flagCount = 0; reviewCount = 0; srcCount = 0;
     if (!map) map = new LivingMap($('map')); map.reset(); map.setTarget(target);
   }
   const reason = (t) => { const d = document.createElement('div'); d.className = 'r'; d.textContent = t; $('reason').appendChild(d); $('reason').scrollTop = 1e5; };
   function addClaim(c) {
-    claimCount++; if (c.tier === 'VERIFIED') verifiedCount++; if (c.tier === 'FLAGGED' || c.tier === 'UNVERIFIED') flagCount++;
-    const flagged = c.tier === 'FLAGGED' || c.tier === 'UNVERIFIED';
-    map.add(c.silo, c.text.slice(0, 46), flagged);
-    const el = document.createElement('div'); el.className = `card ${flagged ? 'flagged ' : ''}${c.silo}`;
-    el.innerHTML = `<div class="top"><span class="silotag">${c.silo}</span><span class="badge ${c.tier}">${c.tier}</span></div>
+    claimCount++;
+    const isReview = c.tier === 'REVIEW';                     // verified figure, but routed to human sign-off
+    const isFlag = c.tier === 'FLAGGED' || c.tier === 'UNVERIFIED';
+    if (c.tier === 'VERIFIED' || isReview) verifiedCount++;   // review claims are sourced
+    if (isFlag) flagCount++;
+    if (isReview) reviewCount++;
+    map.add(c.silo, c.text.slice(0, 46), isFlag);
+    const el = document.createElement('div'); el.className = `card ${isReview ? 'review ' : isFlag ? 'flagged ' : ''}${c.silo}`;
+    const noteColor = isReview ? 'var(--gold-bright)' : 'var(--danger)';
+    el.innerHTML = `<div class="top"><span class="silotag">${c.silo}</span><span class="badge ${c.tier}">${isReview ? 'needs sign-off' : c.tier}</span></div>
       <div class="txt">${c.text}</div>
       ${c.sourceUrl ? `<div class="src">↳ <a href="${c.sourceUrl}" target="_blank" rel="noopener">${shortUrl(c.sourceUrl)}</a> <span class="prov">${c.provenance === 'exact' ? '✓ provenance' : c.provenance === 'host' ? '✓ source host' : '⚠ unverified'}</span></div>` : ''}
-      ${c.flags && c.flags.length ? `<div class="src" style="color:var(--danger)">⚠ ${c.flags.join('; ')}</div>` : ''}`;
+      ${c.flags && c.flags.length ? `<div class="src" style="color:${noteColor}">⚠ ${c.flags.join('; ')}</div>` : ''}`;
     $('ledger').appendChild(el); $('ledger').scrollTop = 1e5;
     $('ledgercount').textContent = `${claimCount} claims`;
   }
@@ -136,6 +141,8 @@
     const caught = sc && sc.refuted ? sc.refuted : 0;
     const fourth = caught > 0
       ? `<div class="metric"><div class="n gold">${caught}</div><div class="l">caught by cross-check</div></div>`
+      : reviewCount > 0
+      ? `<div class="metric"><div class="n gold">${reviewCount}</div><div class="l">routed to human</div></div>`
       : `<div class="metric"><div class="n">${flagCount}</div><div class="l">flagged, not bluffed</div></div>`;
     $('metrics').innerHTML = `
       <div class="metric"><div class="n ok">${verifiedCount}/${claimCount}</div><div class="l">claims sourced</div></div>
@@ -156,9 +163,10 @@
   }
 
   // ---------- replay (client-side, verified) ----------
-  async function replay(g) {
+  async function replay(g, typed) {
     resetStage(g.name, 'replay', 'verified replay');
     const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+    if (typed && nrm(typed) !== nrm(g.id) && !nrm(g.name).includes(nrm(typed)) && nrm(g.molecularTarget) !== nrm(typed)) { reason(`Interpreted "${typed}" as ${g.name}.`); await wait(550); }
     for (const line of (g.reasoning || [])) { reason(line); await wait(650); }
     await wait(300);
     for (const c of (g.claims || [])) { srcCount++; addClaim(c); await wait(950); }
@@ -184,15 +192,47 @@
     else if (ev === 'error') { reason('ERROR: ' + d.message + ' — falling back to a verified replay if available.'); es.close(); const g = GOLDEN[0]; if (g) replay(g); }
   }
 
+  // ---------- fuzzy target matching (typo / brand / target tolerant) ----------
+  const nrm = (s) => (s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  function lev(a, b) {
+    const m = a.length, n = b.length; if (!m) return n; if (!n) return m;
+    let prev = Array.from({ length: n + 1 }, (_, j) => j), cur = new Array(n + 1);
+    for (let i = 1; i <= m; i++) {
+      cur[0] = i;
+      for (let j = 1; j <= n; j++) cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+      [prev, cur] = [cur, prev];
+    }
+    return prev[n];
+  }
+  function tokensFor(g) {
+    const t = new Set([nrm(g.id), nrm(g.molecularTarget), nrm(g.name)]);
+    `${g.name} ${g.molecularTarget}`.split(/[^a-zA-Z0-9]+/).forEach((w) => { if (w.length >= 3) t.add(nrm(w)); });
+    return [...t].filter(Boolean);
+  }
+  function bestMatch(q) {
+    const nq = nrm(q); if (nq.length < 2) return null;
+    let best = null, score = Infinity;
+    for (const g of GOLDEN) for (const t of tokensFor(g)) {
+      let s;
+      if (t === nq) s = 0;
+      else if (nq.length >= 4 && t.startsWith(nq)) s = 0.5;
+      else if (nq.length >= 4 && t.includes(nq)) s = 1;
+      else { const d = lev(nq, t); s = d <= Math.max(2, Math.floor(t.length * 0.25)) ? d : Infinity; }
+      if (s < score) { score = s; best = g; }
+    }
+    return score <= 3 ? best : null;
+  }
+
   // ---------- run dispatch ----------
   function run() {
     const q = $('q').value.trim(); if (!q) return;
-    const g = GOLDEN.find((x) => x.id === q.toLowerCase() || x.name.toLowerCase().includes(q.toLowerCase()) || (x.molecularTarget || '').toLowerCase() === q.toLowerCase());
-    if (g) return replay(g);
+    const g = bestMatch(q);                    // typo/brand/target tolerant
+    if (g) return replay(g, q);
     if (liveAvailable) return live(q);
-    resetStage(q, 'replay', 'no match');
-    reason(`No verified replay for "${q}". Live mode (any molecule) needs the Node server + ANTHROPIC_API_KEY.`);
-    reason('Try a showcase chip below the input, or run the server: npm start.');
+    resetStage(q, 'replay', 'not in demo set');
+    reason(`"${q}" isn't one of the pre-verified demo molecules on this hosted page.`);
+    reason(`Verified replays available: ${GOLDEN.map((x) => x.name.split(' (')[0].split(' &')[0].trim()).join(' · ')}.`);
+    reason('Pick one from the chips above — or run the live build (npm start + ANTHROPIC_API_KEY) to query any molecule against live public APIs.');
   }
 
   $('run').onclick = run; $('q').addEventListener('keydown', (e) => { if (e.key === 'Enter') run(); });
