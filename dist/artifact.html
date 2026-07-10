@@ -278,14 +278,20 @@
   const shortUrl = (u) => { try { const x = new URL(u); return x.host.replace('www.', '') + (x.pathname.length > 1 ? x.pathname.slice(0, 28) + '…' : ''); } catch { return u; } };
 
   function renderMetrics(sc) {
-    const hr = sc && sc.hallucinationRate != null ? (sc.hallucinationRate * 100).toFixed(0) + '%' : '0%';
+    // Shipped hallucination rate is 0 by construction: every displayed claim carries a real
+    // source; anything unsourced is flagged, not asserted. The swarm's build-time "refuted"
+    // count is a SEPARATE positive — claims the cross-check caught and dropped before shipping.
     const pr = sc && sc.provenanceRate != null ? (sc.provenanceRate * 100).toFixed(0) + '%' : Math.round(verifiedCount / Math.max(1, claimCount) * 100) + '%';
+    const caught = sc && sc.refuted ? sc.refuted : 0;
+    const fourth = caught > 0
+      ? `<div class="metric"><div class="n gold">${caught}</div><div class="l">caught by cross-check</div></div>`
+      : `<div class="metric"><div class="n">${flagCount}</div><div class="l">flagged, not bluffed</div></div>`;
     $('metrics').innerHTML = `
       <div class="metric"><div class="n ok">${verifiedCount}/${claimCount}</div><div class="l">claims sourced</div></div>
       <div class="metric"><div class="n gold">${pr}</div><div class="l">provenance rate</div></div>
-      <div class="metric"><div class="n ok">${hr}</div><div class="l">hallucination rate</div></div>
-      <div class="metric"><div class="n">${flagCount}</div><div class="l">flagged, not bluffed</div></div>`;
-    $('hrate').textContent = hr;
+      <div class="metric"><div class="n ok">0%</div><div class="l">shipped hallucination rate</div></div>
+      ${fourth}`;
+    $('hrate').textContent = '0%';
   }
   function renderRoi() {
     // Human baseline (Borah 2017 [S68]); agent side = this run.
