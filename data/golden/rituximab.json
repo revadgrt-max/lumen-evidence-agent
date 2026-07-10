@@ -1,0 +1,87 @@
+{
+  "id": "rituximab",
+  "name": "Rituximab (Rituxan/MabThera)",
+  "modality": "monoclonal antibody",
+  "molecularTarget": "CD20",
+  "verified": true,
+  "reasoning": [
+    "Target: CD20. Modality: monoclonal antibody.",
+    "Querying ClinicalTrials.gov and PubMed for pivotal trials, endpoints, and attrition signals\u2026",
+    "Cross-checking openFDA + FDA approval records for the exact regulatory pathway\u2026",
+    "Connecting research \u2192 clinical \u2192 regulatory; every claim 3-vote cross-checked, unsourced items flagged."
+  ],
+  "claims": [
+    {
+      "silo": "research",
+      "text": "Modality rationale / mechanism of action: binding of rituximab to CD20 triggers three distinct cell-destruction mechanisms \u2014 direct apoptotic signaling, complement activation, and cell-mediated cytotoxicity (ADCC).",
+      "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/14576843/",
+      "quote": "Mechanisms of cell destruction that have been demonstrated to be activated by rituximab binding to CD20 include direct signaling of apoptosis, complement activation and cell-mediated cytotoxicity.",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "research",
+      "text": "Independent U.S. government (NCI) corroboration that rituximab (Rituxan) is a CD20-directed antibody that eliminates malignant B cells, confirming target and mechanism.",
+      "sourceUrl": "https://www.cancer.gov/research/progress/discovery/blood-cancer",
+      "quote": "rituximab (Rituxan) to specifically bind to CD20 and eliminate cancerous B cells.",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "research",
+      "text": "Competitive set: the glycoengineered type II anti-CD20 successor obinutuzumab challenged rituximab head-to-head in first-line follicular lymphoma (GALLIUM) and significantly improved progression-free survival over rituximab-based chemoimmunotherapy \u2014 evidence the anti-CD20 class has advanced beyond the incumbent.",
+      "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/28976863/",
+      "quote": "hazard ratio for progression, relapse, or death, 0.66; 95% confidence interval [CI], 0.51 to 0.85; P=0.001",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "clinical",
+      "text": "Pivotal single-agent trial in relapsed low-grade/follicular B-cell NHL (McLaughlin et al., J Clin Oncol 1998): 166 patients across 31 centers received IDEC-C2B8 (rituximab) 375 mg/m2 weekly x4; the intent-to-treat overall response rate was 48%, with projected median time to progression of 13.0 months. This was the registrational efficacy basis for the 1997 indication.",
+      "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/9704735/",
+      "quote": "Of this intent-to-treat group, 48% responded.",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "clinical",
+      "text": "Pivotal randomized trial in diffuse large B-cell lymphoma (GELA LNH-98.5): the first randomized study comparing R-CHOP vs CHOP in 399 patients aged 60-80; adding rituximab improved 10-year overall survival to 43.5% vs 27.6% (and 10-year PFS 36.5% vs 20%), the practice-changing survival result that expanded rituximab into aggressive lymphoma.",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2951853/",
+      "quote": "the 10-year overall survival was 43.5% compared with 27.6%",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "clinical",
+      "text": "Attrition signal (failed primary endpoint): in the randomized RESORT/ECOG E4402 trial in low-tumor-burden follicular lymphoma, a maintenance-rituximab dosing strategy did NOT beat simple re-treatment on the primary endpoint of time to treatment failure (median TTF 4.3 yr maintenance vs 3.9 yr re-treatment; P=.54), showing that more intensive rituximab dosing failed to demonstrate superiority.",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4171355/",
+      "quote": "the estimated median TTF was 3.9 years for patients receiving RR and 4.3 years for those receiving MR (P = .54).",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "regulatory",
+      "text": "Exact FDA approval: rituximab was approved by the U.S. FDA on November 26, 1997 \u2014 the first monoclonal antibody approved for the treatment of lymphoma. (No expedited-program label such as Accelerated Approval, Breakthrough Therapy, Priority Review, Fast Track, RTOR, or Project Orbis is asserted; the approval predates RTOR/2018 and Project Orbis/2019, and none was verifiable from primary sources.)",
+      "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/11467356/",
+      "quote": "approved by the US Food and Drug Administration on November 26, 1997",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "regulatory",
+      "text": "Exact original approved indication wording: relapsed or refractory, CD20-positive, B-cell, low-grade or follicular non-Hodgkin's lymphoma \u2014 precise verbatim label language, tying the regulatory grant directly to the CD20 target and the McLaughlin pivotal population.",
+      "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/11467356/",
+      "quote": "relapsed or refractory, CD20-positive, B-cell, low-grade or follicular non-Hodgkin's lymphoma (LG/F NHL)",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    }
+  ],
+  "flags": [],
+  "scorecard": {
+    "built": 9,
+    "confirmed": 8,
+    "refuted": 1,
+    "hallucinationRate": 0.111,
+    "redTeam": null
+  }
+}

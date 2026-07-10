@@ -1,0 +1,103 @@
+{
+  "id": "bavdegalutamide",
+  "name": "Bavdegalutamide (ARV-110)",
+  "modality": "PROTAC degrader",
+  "molecularTarget": "androgen receptor (AR)",
+  "verified": true,
+  "reasoning": [
+    "Target: androgen receptor (AR). Modality: PROTAC degrader.",
+    "Querying ClinicalTrials.gov and PubMed for pivotal trials, endpoints, and attrition signals\u2026",
+    "Cross-checking openFDA + FDA approval records for the exact regulatory pathway\u2026",
+    "Connecting research \u2192 clinical \u2192 regulatory; every claim 3-vote cross-checked, unsourced items flagged."
+  ],
+  "claims": [
+    {
+      "silo": "research",
+      "text": "Bavdegalutamide (ARV-110) is a heterobifunctional PROTAC that degrades the androgen receptor by recruiting the cereblon E3 ubiquitin ligase, driving AR polyubiquitination and proteasomal destruction \u2014 the defining modality of the asset (event-driven degradation, not occupancy-based inhibition).",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11962395/",
+      "quote": "Bavdegalutamide (ARV-110) is a PROTAC protein degrader designed to target AR for ubiquitination and degradation through recruitment of the E3 ubiquitin ligase substrate adapter cereblon",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "research",
+      "text": "The molecular-target rationale: AR signaling is the principal driver of prostate cancer, and AR alterations (mutation, amplification, splicing) drive resistance to standard AR-pathway inhibitors \u2014 the exact escape mechanisms a degrader is built to overcome by removing the protein rather than blocking its ligand pocket.",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11962395/",
+      "quote": "Androgen receptor (AR) signaling is the principal driver of prostate cancer",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "research",
+      "text": "Potency benchmark supporting the degrader thesis: ARV-110 drove near-complete AR loss in prostate cancer cell lines at low-nanomolar concentrations, consistent with catalytic degradation.",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11962395/",
+      "quote": "Bavdegalutamide induced robust degradation of AR at a DC50 of 1 nmol/L in LNCaP and VCaP cells, with >95% of AR degraded in both prostate cancer cell lines",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "research",
+      "text": "The preclinical result that predicted the clinical biomarker: ARV-110 degraded the T878A and H875Y mutant ARs as effectively as wild-type \u2014 the same mutations that later marked the responder subgroup in the clinic, tying mechanism directly to patient selection.",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11962395/",
+      "quote": "Four of the six AR-mutant proteins tested (F877L, T878A, M896V, and H875Y) were degraded with similar potency to WT AR",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "research",
+      "text": "Attrition / limitation signal (mechanistic ceiling): ARV-110 did not degrade the AR-V7 splice variant, which lacks the ligand-binding domain the PROTAC engages, and cleared L702H-mutant AR only at reduced potency. This pre-defines a non-responder population and is exactly why ARDENT carved out an AR L702H / AR-V7 subgroup as expected non-responders.",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11962395/",
+      "quote": "did not induce the degradation of AR splice variant 7, which lacks the AR LBD",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "clinical",
+      "text": "The pivotal early-phase trial: ARDENT (NCT03888612), a first-in-human Phase 1/2 open-label dose-escalation and cohort-expansion study of ARV-110 in mCRPC, sponsored by Arvinas Inc., enrolled 248 patients with PSA response rate (PCWG3) and RECIST response rate as the primary anti-tumor endpoints; the study is now listed as Completed.",
+      "sourceUrl": "https://clinicaltrials.gov/api/v2/studies/NCT03888612",
+      "quote": "A Phase 1/2, Open-label, Dose Escalation, and Cohort Expansion Clinical Trial to Evaluate the Safety, Tolerability, Pharmacokinetics, and Pharmacodynamics of ARV-110 in Patients With Metastatic Castration Resistant Prostate Cancer",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "clinical",
+      "text": "Key efficacy signal, concentrated in the biomarker-defined subgroup: roughly half of patients whose tumors carried AR T878X/H875Y mutations had significant PSA declines on ARV-110 in the Phase 2 ARDENT cohort (reported at ASCO GU 2022) \u2014 matching the mutant ARs the degrader was shown preclinically to clear.",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10854644/",
+      "quote": "Approximately 50% of patients with these mutations treated with ARV-110 experienced a significant reduction in prostate-specific antigen levels",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "clinical",
+      "text": "Dose and timing of the Phase 2 expansion: the ARDENT Phase 2 cohort opened in October 2020 at the 420 mg once-daily dose, the dose at which the biomarker-subgroup activity was reported.",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10854644/",
+      "quote": "its phase II clinical study (ARDENT) commenced in October 2020 at a dose of 420 mg",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "regulatory",
+      "text": "The EXACT and only FDA program obtained: Fast Track designation, granted by the U.S. FDA and announced May 29, 2019. Fast Track is an expedited-development/review program \u2014 distinct from Breakthrough Therapy, Accelerated Approval, Priority Review, RTOR, and Project Orbis. ARV-110 never received FDA approval; this designation is not an approval or an efficacy endorsement.",
+      "sourceUrl": "https://www.globenewswire.com/news-release/2019/05/29/1856194/0/en/Arvinas-Receives-Fast-Track-Designation-for-its-Targeted-Protein-Degrader-ARV-110-as-a-Treatment-for-Men-with-Metastatic-Castration-Resistant-Prostate-Cancer.html",
+      "quote": "ARV-110, has been granted Fast Track designation by the U.S. Food and Drug Administration (FDA)",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "regulatory",
+      "text": "Exact indication wording covered by the Fast Track designation: late-line mCRPC after two or more prior systemic therapies \u2014 a heavily pretreated, post-ARPI population, consistent with the ARDENT enrollment criteria.",
+      "sourceUrl": "https://www.globenewswire.com/news-release/2019/05/29/1856194/0/en/Arvinas-Receives-Fast-Track-Designation-for-its-Targeted-Protein-Degrader-ARV-110-as-a-Treatment-for-Men-with-Metastatic-Castration-Resistant-Prostate-Cancer.html",
+      "quote": "treatment of men with metastatic castration-resistant prostate cancer (mCRPC) whose disease has progressed after treatment with two or more systemic therapies",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    }
+  ],
+  "flags": [],
+  "scorecard": {
+    "built": 10,
+    "confirmed": 10,
+    "refuted": 0,
+    "hallucinationRate": 0,
+    "redTeam": null
+  }
+}

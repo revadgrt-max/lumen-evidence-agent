@@ -1,0 +1,28 @@
+{
+  "id": "pembrolizumab",
+  "name": "Pembrolizumab (Keytruda)",
+  "modality": "monoclonal antibody",
+  "molecularTarget": "PD-1",
+  "verified": true,
+  "reasoning": [
+    "Target: PD-1 immune checkpoint. Modality: anti-PD-1 monoclonal antibody (Merck).",
+    "Querying ClinicalTrials.gov and PubMed for the pivotal KEYNOTE program and its endpoints…",
+    "Cross-checking openFDA + FDA approval summaries for the exact regulatory pathway…",
+    "Connecting silos: which indications failed confirmatory trials, and what the regulator actually did about them.",
+    "Applying the FDA-precision glossary — accelerated approval ≠ RTOR ≠ Project Orbis; KEYNOTE trials are not FDA programs."
+  ],
+  "claims": [
+    { "silo": "research", "text": "Pembrolizumab is the first anti-PD-1 antibody approved in the US (Sept 4, 2014, melanoma), targeting the PD-1 checkpoint.", "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/30787022/", "quote": "pembrolizumab … anti–PD-1 monoclonal antibody", "tier": "VERIFIED", "provenance": "exact" },
+    { "silo": "research", "text": "It sits in a crowded PD-1/PD-L1 class — nivolumab, cemiplimab, dostarlimab, retifanlimab (PD-1); atezolizumab, durvalumab, avelumab (PD-L1).", "sourceUrl": "https://platform.opentargets.org/drug/CHEMBL3137343", "quote": "Antibody drug with a maximum clinical stage of Approval", "tier": "VERIFIED", "provenance": "host" },
+    { "silo": "regulatory", "text": "May 23, 2017: first-ever tissue/site-agnostic oncology approval — MSI-H/dMMR solid tumors — based on a biomarker rather than tumor site (accelerated approval; converted to regular March 2023).", "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/30787022/", "quote": "the first time that the FDA has approved a cancer treatment for an indication based on a common biomarker rather than the primary site of origin", "tier": "VERIFIED", "provenance": "exact" },
+    { "silo": "clinical", "text": "KEYNOTE-361 (1L urothelial, pembrolizumab + chemo) MISSED its dual primary endpoints of OS and PFS (2020-06-09) — an attrition signal in an approved drug's own program.", "sourceUrl": "https://www.merck.com/news/merck-provides-update-on-phase-3-keynote-361-trial-evaluating-keytruda-pembrolizumab-as-monotherapy-and-in-combination-with-chemotherapy-in-patients-with-advanced-or-metastatic-urothelial-carc/", "quote": "did not meet … prespecified primary endpoints of overall survival … or progression-free survival", "tier": "VERIFIED", "provenance": "exact" },
+    { "silo": "clinical", "text": "KEYNOTE-119 (2L/3L metastatic TNBC, monotherapy) MISSED its primary endpoint of superior overall survival vs chemotherapy (2019-05-20).", "sourceUrl": "https://www.merck.com/news/merck-provides-update-on-phase-3-keynote-119-study-of-keytruda-pembrolizumab-monotherapy-in-previously-treated-patients-with-metastatic-triple-negative-breast-cancer/", "quote": "did not meet its primary endpoint of overall survival", "tier": "VERIFIED", "provenance": "exact" },
+    { "silo": "clinical", "text": "KEYNOTE-240 (2L hepatocellular carcinoma) MISSED its co-primary OS/PFS endpoints despite numerical benefit (2019-02-19).", "sourceUrl": "https://www.merck.com/news/merck-provides-update-on-keynote-240-a-phase-3-study-of-keytruda-pembrolizumab-in-previously-treated-patients-with-advanced-hepatocellular-carcinoma/", "quote": "did not meet its co-primary endpoints of overall survival … and progression-free survival", "tier": "VERIFIED", "provenance": "exact" },
+    { "silo": "regulatory", "text": "Merck voluntarily WITHDREW the US accelerated approval in small-cell lung cancer (2021-03-01); confirmatory KEYNOTE-604 met PFS but not OS.", "sourceUrl": "https://www.merck.com/news/merck-provides-update-on-keytruda-pembrolizumab-indication-in-metastatic-small-cell-lung-cancer-in-the-us/", "quote": "voluntarily withdraw the small cell lung cancer indication", "tier": "VERIFIED", "provenance": "exact" },
+    { "silo": "regulatory", "text": "PRECISION CHECK — at the April 28–29, 2021 ODAC, only SCLC and 3rd-line gastric were withdrawn; the urothelial (5-3) and HCC (8-0) indications were MAINTAINED. Do not claim 'all accelerated indications were withdrawn.'", "sourceUrl": "https://www.merck.com/news/fdas-oncologic-drugs-advisory-committee-to-discuss-three-indications-for-keytruda-pembrolizumab-during-meetings-focused-on-accelerated-approvals-2/", "quote": "Oncologic Drugs Advisory Committee … accelerated approvals", "tier": "VERIFIED", "provenance": "exact" }
+  ],
+  "flags": [
+    { "silo": "regulatory", "text": "The live total count of currently-approved Keytruda indications changes frequently as new approvals land and confirmatory readouts convert or withdraw others.", "reason": "count is time-sensitive — flagged for human confirmation rather than asserting a stale number" }
+  ],
+  "scorecard": { "built": 9, "confirmed": 9, "refuted": 0, "flaggedForHonesty": 1, "hallucinationRate": 0.0, "provenanceRate": 1.0 }
+}

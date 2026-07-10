@@ -1,0 +1,26 @@
+{
+  "id": "vepdegestrant",
+  "name": "Vepdegestrant (ARV-471)",
+  "modality": "PROTAC degrader",
+  "molecularTarget": "estrogen receptor (ER)",
+  "verified": true,
+  "reasoning": [
+    "Target: estrogen receptor (ER). Modality: oral PROTAC degrader (Arvinas/Pfizer) — an emerging mechanism, not a classic antibody or small-molecule inhibitor.",
+    "Querying PubMed for the degrader mechanism and first-in-human data…",
+    "Pulling the pivotal VERITAC-2 Phase 3 readout — being precise about biomarker subgroup vs all-comers…",
+    "Cross-checking the SEC filing for the exact FDA regulatory status and PDUFA date.",
+    "Connecting silos: the ITT miss but ESR1m win explains the biomarker-defined label the FDA is reviewing."
+  ],
+  "claims": [
+    { "silo": "research", "text": "Vepdegestrant (ARV-471) is an orally bioavailable PROTAC that degrades the estrogen receptor by recruiting the E3 ligase cereblon (CRBN) to trigger ER ubiquitination and proteasomal degradation.", "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/39072356/", "quote": "an oral PROTAC ER degrader that binds an E3 ubiquitin ligase and ER to directly trigger ubiquitination of ER and its subsequent proteasomal degradation", "tier": "VERIFIED", "provenance": "exact" },
+    { "silo": "clinical", "text": "VERITAC-2 Phase 3 — POSITIVE in the ESR1-mutant subgroup: 43% reduction in progression/death vs fulvestrant, HR 0.57 (95% CI 0.42–0.77), P<0.001; median PFS 5.0 vs 2.1 months (BICR).", "sourceUrl": "https://www.pfizer.com/news/press-release/press-release-detail/arvinas-and-pfizers-vepdegestrant-significantly-improves", "quote": "reducing the risk of disease progression or death by 43% … [HR=0.57 (95% CI 0.42–0.77); 2-sided P<0.001]", "tier": "VERIFIED", "provenance": "exact" },
+    { "silo": "clinical", "text": "ATTRITION / PRECISION — VERITAC-2 did NOT reach significance in the ITT all-comers population: median PFS 3.7 vs 3.6 months, HR 0.83 (95% CI 0.68–1.02), P=0.07. The win is confined to the biomarker subgroup.", "sourceUrl": "https://www.pfizer.com/news/press-release/press-release-detail/arvinas-and-pfizers-vepdegestrant-significantly-improves", "quote": "did not reach statistical significance in improvement in PFS in the intent-to-treat (ITT) population … [HR=0.83 (95% CI 0.68–1.02); 2-sided P=0.07]", "tier": "VERIFIED", "provenance": "exact" },
+    { "silo": "clinical", "text": "Vepdegestrant was first-in-human as an oral PROTAC and was well tolerated with clinical activity in pretreated ER+/HER2− advanced breast cancer in Phase 1/2.", "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/39072356/", "quote": "monotherapy was well tolerated with clinical activity in pretreated patients with ER+/HER2- advanced breast cancer", "tier": "VERIFIED", "provenance": "exact" },
+    { "silo": "regulatory", "text": "FDA accepted the NDA (2025-08-08) for ER+/HER2−, ESR1-mutated advanced/metastatic breast cancer after prior endocrine therapy — the label scope tracks the ESR1m win, not the ITT population.", "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1655759/000165575925000141/vepdegestrantndaacceptan.htm", "quote": "the FDA has accepted the New Drug Application (NDA) for vepdegestrant for the treatment of patients with estrogen receptor-positive (ER+)/human epidermal growth factor receptor 2-negative (HER2-), ESR1-mutated advanced or metastatic breast cancer", "tier": "VERIFIED", "provenance": "exact" },
+    { "silo": "regulatory", "text": "The FDA assigned a PDUFA action date of June 5, 2026; vepdegestrant also holds Fast Track designation.", "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1655759/000165575925000141/vepdegestrantndaacceptan.htm", "quote": "The FDA has assigned a Prescription Drug User Fee Act (PDUFA) action date of June 5, 2026", "tier": "VERIFIED", "provenance": "exact" }
+  ],
+  "flags": [
+    { "silo": "research", "text": "Whether vepdegestrant is the single 'most advanced' clinical-stage PROTAC is a superlative the primary sources don't establish.", "reason": "ranking claim not supported by a citable source — flagged rather than asserted" }
+  ],
+  "scorecard": { "built": 6, "confirmed": 6, "refuted": 0, "flaggedForHonesty": 1, "hallucinationRate": 0.0, "provenanceRate": 1.0 }
+}

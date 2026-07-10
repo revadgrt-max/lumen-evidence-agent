@@ -1,0 +1,119 @@
+{
+  "id": "sacituzumab-govitecan",
+  "name": "Sacituzumab govitecan (Trodelvy)",
+  "modality": "antibody-drug conjugate",
+  "molecularTarget": "TROP2",
+  "verified": true,
+  "reasoning": [
+    "Target: TROP2. Modality: antibody-drug conjugate.",
+    "Querying ClinicalTrials.gov and PubMed for pivotal trials, endpoints, and attrition signals\u2026",
+    "Cross-checking openFDA + FDA approval records for the exact regulatory pathway\u2026",
+    "Connecting research \u2192 clinical \u2192 regulatory; every claim 3-vote cross-checked, unsourced items flagged."
+  ],
+  "claims": [
+    {
+      "silo": "research",
+      "text": "Sacituzumab govitecan is a TROP2-directed antibody-drug conjugate: a humanized anti-TROP-2 monoclonal antibody carrying the cytotoxic payload SN-38 at an unusually high drug-to-antibody ratio of 7-8:1. TROP-2 is the molecular target because it is involved in cancer signaling and overexpressed across many epithelial cancer types, giving the ADC its tumor selectivity.",
+      "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/31208270/",
+      "quote": "SN-38 has been conjugated to a humanized antibody against trophoblast cell surface antigen 2 (TROP-2), which is involved in cancer signaling pathways and has increased expression by many cancer cell types, yielding the ADC sacituzumab govitecan. By conjugating a higher number of SN-38 molecules to the immunoglobulin (drug-to-antibody ratio = 7-8:1), and giving higher (10 mg/kg) and repeated therap",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "research",
+      "text": "The payload SN-38 (the active metabolite of irinotecan) is a camptothecin that inhibits topoisomerase I, causing double-stranded DNA breaks and cell death; a moderately stable linker also releases SN-38 into the tumor microenvironment to drive a bystander effect on neighboring cells. This is the modality rationale for using a topoisomerase-I payload against TROP2-high tumors.",
+      "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/31208270/",
+      "quote": "the active metabolite SN-38, which is derived from the popular anticancer drug, irinotecan (a camptothecin that inhibits the nuclear topoisomerase I enzyme, inducing double-stranded DNA breaks during the mitotic S-phase of affected cells)",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "research",
+      "text": "Competitive set: the same TROP2 + topoisomerase-inhibitor ADC class now has a direct rival. On January 17, 2025 the FDA approved datopotamab deruxtecan-dlnk (Datroway, Daiichi Sankyo), described by the FDA as a Trop-2-directed antibody and topoisomerase inhibitor conjugate, establishing TROP2 ADCs as a contested competitive space in breast cancer.",
+      "sourceUrl": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-datopotamab-deruxtecan-dlnk-unresectable-or-metastatic-hr-positive-her2-negative-breast",
+      "quote": "On January 17, 2025, the Food and Drug Administration approved datopotamab deruxtecan-dlnk (Datroway, Daiichi Sankyo, Inc.), a Trop-2-directed antibody and topoisomerase inhibitor conjugate, for adult patients with unresectable or metastatic, hormone receptor (HR)-positive, human epidermal growth factor receptor 2 (HER2)-negative (IHC 0, IHC1+ or IHC2+/ISH-) breast cancer who have received prior e",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "clinical",
+      "text": "The initial clinical signal came from IMMU-132-01 (NCT01631552), a single-arm Phase 2 trial of 108 patients with metastatic TNBC who had received at least two prior therapies. The investigator-assessed overall response rate was 33.3% with a median duration of response of 7.7 months - the efficacy that supported the first (accelerated) approval.",
+      "sourceUrl": "http://web.archive.org/web/20260413204854/https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-sacituzumab-govitecan-hziy-metastatic-triple-negative-breast-cancer",
+      "quote": "The ORR was 33.3% (95% CI: 24.6, 43.1). The median response duration was 7.7 months (95% CI: 4.9, 10.8).",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "clinical",
+      "text": "The pivotal Phase 3 ASCENT trial (NCT02574455, 529 patients with relapsed/refractory metastatic TNBC) confirmed benefit versus single-agent chemotherapy: median PFS 4.8 vs 1.7 months (HR 0.43) and median OS 11.8 vs 6.9 months (HR 0.51), both p<0.0001. This is the load-bearing randomized evidence for the asset.",
+      "sourceUrl": "http://web.archive.org/web/20260206231630/https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-regular-approval-sacituzumab-govitecan-triple-negative-breast-cancer",
+      "quote": "Among all randomized patients (with and without brain metastases), median PFS for patients receiving sacituzumab govitecan was 4.8 months (95% CI: 4.1, 5.8) compared with 1.7 months (95% CI: 1.5, 2.5) in those receiving chemotherapy (HR 0.43; 95% CI: 0.35, 0.54; p<0.0001). Median OS was 11.8 months (95% CI: 10.5, 13.8) and 6.9 months (95% CI: 5.9, 7.6) respectively (HR 0.51; 95% CI: 0.41, 0.62; p<",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "clinical",
+      "text": "The asset moved to first line in TNBC via ASCENT-03 (NCT05382299, 558 patients not candidates for PD-1/PD-L1 therapy), where single-agent sacituzumab govitecan beat physician's-choice chemotherapy on the primary endpoint: median PFS 9.7 vs 6.9 months (HR 0.62; p<0.0001).",
+      "sourceUrl": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-sacituzumab-govitecan-hziy-monotherapy-and-combination-pembrolizumab-first-line",
+      "quote": "Median PFS was 9.7 months (95% CI: 8.1, 11.1) in the sacituzumab govitecan-hziy arm and 6.9 months (95% CI: 5.6, 8.2) in the TPC arm (Hazard ratio 0.62 [95% CI: 0.50, 0.77]; p-value <0.0001).",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "clinical",
+      "text": "In the PD-L1-positive first-line setting, ASCENT-04/KEYNOTE-D19 (NCT05382286, 443 patients with CPS >= 10) tested sacituzumab govitecan plus pembrolizumab against chemotherapy plus pembrolizumab: median PFS 11.2 vs 7.8 months (HR 0.65; p=0.0009).",
+      "sourceUrl": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-sacituzumab-govitecan-hziy-monotherapy-and-combination-pembrolizumab-first-line",
+      "quote": "Median PFS was 11.2 months (95% CI: 9.3, 16.7) in the sacituzumab govitecan-hziy arm and 7.8 months (95% CI: 7.3, 9.3) in the TPC plus pembrolizumab arm (Hazard ratio 0.65 [95% CI: 0.51, 0.84]; p-value 0.0009).",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "clinical",
+      "text": "Attrition signal: the confirmatory Phase 3 TROPiCS-04 in metastatic urothelial cancer FAILED. It did not meet its primary endpoint of overall survival in the intention-to-treat population, which triggered Gilead's decision to withdraw the urothelial indication - a concrete failed-endpoint / withdrawn-indication event for this asset.",
+      "sourceUrl": "https://www.gilead.com/company/company-statements/2024/gilead-provides-update-on-us-indication-for-trodelvy-in-metastatic-urothelial-cancer",
+      "quote": "the TROPiCS-04 study did not meet the primary endpoint of overall survival (OS) in the intention-to-treat (ITT) population.",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "regulatory",
+      "text": "First FDA action: on April 22, 2020 the FDA granted ACCELERATED APPROVAL (a distinct program, based on ORR/DOR surrogate endpoints, contingent on confirmatory trials) to sacituzumab govitecan-hziy (TRODELVY, Immunomedics) for adults with metastatic TNBC who had received at least two prior therapies for metastatic disease.",
+      "sourceUrl": "http://web.archive.org/web/20260413204854/https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-sacituzumab-govitecan-hziy-metastatic-triple-negative-breast-cancer",
+      "quote": "On April 22, 2020, the Food and Drug Administration granted accelerated approval to sacituzumab govitecan-hziy (TRODELVY, Immunomedics, Inc.) for adult patients with metastatic triple-negative breast cancer who received at least two prior therapies for metastatic disease.",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "regulatory",
+      "text": "The accelerated approval converted to REGULAR (full) approval on April 7, 2021 for unresectable locally advanced or metastatic TNBC after two or more prior systemic therapies (at least one for metastatic disease) - the confirmatory ASCENT data satisfying the accelerated-approval requirement. This is the successful-confirmation counterpoint to the urothelial withdrawal.",
+      "sourceUrl": "http://web.archive.org/web/20260206231630/https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-regular-approval-sacituzumab-govitecan-triple-negative-breast-cancer",
+      "quote": "On April 7, 2021, the Food and Drug Administration granted regular approval to sacituzumab govitecan (Trodelvy, Immunomedics Inc.) for patients with unresectable locally advanced or metastatic triple-negative breast cancer (mTNBC) who have received two or more prior systemic therapies, at least one of them for metastatic disease.",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "regulatory",
+      "text": "Urothelial lifecycle: the FDA granted accelerated approval on April 13, 2021 for locally advanced/metastatic urothelial cancer after prior platinum chemotherapy and a PD-1/PD-L1 inhibitor, based on the single-arm TROPHY (IMMU-132-06; NCT03547973) ORR of 27.7%. After confirmatory TROPiCS-04 failed, the FDA announced the final withdrawal of this indication on November 22, 2024 - accelerated approval revoked, not just voluntarily paused.",
+      "sourceUrl": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-sacituzumab-govitecan-advanced-urothelial-cancer",
+      "quote": "On April 13, 2021, the Food and Drug Administration granted accelerated approval to sacituzumab govitecan (Trodelvy, Immunomedics Inc.) for patients with locally advanced or metastatic urothelial cancer (mUC) who previously received a platinum-containing chemotherapy and either a programmed death receptor-1 (PD-1) or a programmed death-ligand 1 (PD-L1) inhibitor.",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "regulatory",
+      "text": "Most recent action: on June 24, 2026 the FDA approved two first-line TNBC indications (single-agent via ASCENT-03; with pembrolizumab for PD-L1 CPS >= 10 via ASCENT-04/KEYNOTE-D19). Precision note: this review was conducted under PROJECT ORBIS - an FDA Oncology Center of Excellence international co-review framework (est. 2019), which is a separate program from Accelerated Approval, Breakthrough Therapy, Priority Review, or RTOR.",
+      "sourceUrl": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-sacituzumab-govitecan-hziy-monotherapy-and-combination-pembrolizumab-first-line",
+      "quote": "This review was conducted under Project Orbis, an initiative of the FDA Oncology Center of Excellence.",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    }
+  ],
+  "flags": [],
+  "scorecard": {
+    "built": 12,
+    "confirmed": 12,
+    "refuted": 0,
+    "hallucinationRate": 0,
+    "redTeam": null
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "id": "trastuzumab",
+  "name": "Trastuzumab (Herceptin) & trastuzumab deruxtecan (Enhertu)",
+  "modality": "monoclonal antibody / ADC",
+  "molecularTarget": "HER2",
+  "verified": true,
+  "reasoning": [
+    "Target: HER2. Modality: monoclonal antibody / ADC.",
+    "Querying ClinicalTrials.gov and PubMed for pivotal trials, endpoints, and attrition signals\u2026",
+    "Cross-checking openFDA + FDA approval records for the exact regulatory pathway\u2026",
+    "Connecting research \u2192 clinical \u2192 regulatory; every claim 3-vote cross-checked, unsourced items flagged."
+  ],
+  "claims": [
+    {
+      "silo": "research",
+      "text": "Trastuzumab deruxtecan (T-DXd/Enhertu) is a HER2-directed antibody-drug conjugate: a humanized anti-HER2 IgG1 antibody linked to DXd, a topoisomerase I inhibitor small-molecule payload, via a cleavable linker. This re-engineers the same HER2 target as the naked antibody trastuzumab into a cytotoxic delivery vehicle.",
+      "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/761139s000lbl.pdf",
+      "quote": "Fam-trastuzumab deruxtecan-nxki is a HER2-directed antibody-drug conjugate. The antibody is a humanized anti-HER2 IgG1. The small molecule, DXd, is a topoisomerase I inhibitor attached to the antibody by a cleavable linker.",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "research",
+      "text": "Mechanistic rationale for activity across the HER2-expression spectrum: after the ADC binds HER2 and is internalized, lysosomal cleavage releases a membrane-permeable payload that damages DNA and drives apoptosis \u2014 the basis for the 'bystander' killing that lets T-DXd work in low-HER2 tumors where a naked antibody cannot.",
+      "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/761139s000lbl.pdf",
+      "quote": "Following binding to HER2 on tumor cells, fam-trastuzumab deruxtecan-nxki undergoes internalization and intracellular linker cleavage by lysosomal enzymes. Upon release, the membrane-permeable DXd causes DNA damage and apoptotic cell death.",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "research",
+      "text": "Competitive set: HER2 is a validated oncology target addressed by multiple drug classes beyond trastuzumab \u2014 other monoclonal antibodies (e.g. pertuzumab, margetuximab), small-molecule tyrosine kinase inhibitors (e.g. lapatinib, neratinib, tucatinib), and antibody-drug conjugates (ado-trastuzumab emtansine/T-DM1 and trastuzumab deruxtecan).",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11193558/",
+      "quote": "Trastuzumab is not the only drug developed to target HER2; over the years, it has been complemented by a number of other compounds, including monoclonal antibodies, small molecule tyrosine kinase inhibitors (TKI), and antibody-drug conjugates (ADC).",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "clinical",
+      "text": "DESTINY-Breast03 (pivotal, 2nd-line HER2-positive metastatic breast cancer): T-DXd was tested head-to-head against the prior ADC standard of care, trastuzumab emtansine (T-DM1), and reduced the risk of disease progression or death by 72% (HR 0.28; 95% CI 0.22-0.37; p<0.0001), displacing T-DM1 as standard of care.",
+      "sourceUrl": "https://www.astrazeneca.com/media-centre/press-releases/2022/enhertu-approved-in-us-for-2l-her2-positive-breast-cancer.html",
+      "quote": "Enhertu reduced the risk of disease progression or death by 72% versus trastuzumab emtansine (T-DM1)",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "clinical",
+      "text": "DESTINY-Breast04 (pivotal, HER2-low metastatic breast cancer): T-DXd improved median PFS to 9.9 vs 5.1 months (HR 0.50) and extended median overall survival to 23.4 vs 16.8 months versus physician's-choice chemotherapy \u2014 the first demonstration that a HER2-directed agent works in HER2-low disease, the exact population where the naked antibody had failed.",
+      "sourceUrl": "https://www.astrazeneca.com/media-centre/press-releases/2022/enhertu-approved-in-the-us-for-her2-low-mbc.html",
+      "quote": "9.9 versus 5.1 months; hazard ratio [HR] 0.50; 95% confidence interval [CI] 0.40-0.63; p<0.0001). A median overall survival (OS) of 23.4 months was seen in patients treated with Enhertu versus 16.8 months in those treated with chemotherapy",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "clinical",
+      "text": "ATTRITION SIGNAL (failed endpoint): The naked antibody trastuzumab failed in exactly the HER2-low population the ADC later won. In the phase III NSABP B-47 adjuvant trial (3,270 patients, IHC 1+/2+ FISH-negative), adding trastuzumab to chemotherapy did NOT improve invasive disease-free survival (HR 0.98; 95% CI 0.76-1.25; P=.85). This failure motivated the ADC approach.",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7007289/",
+      "quote": "Addition of trastuzumab to CRx did not improve IDFS compared with CRx (HR, 0.98; 95% CI, 0.76 to 1.25; P = .85)",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "clinical",
+      "text": "ATTRITION / SAFETY SIGNAL: T-DXd carries an FDA Boxed Warning for interstitial lung disease (ILD)/pneumonitis, including fatal cases \u2014 a class liability of the ADC that requires active monitoring and permanent discontinuation at Grade 2 or higher, and led all pivotal trials to exclude patients with a history of ILD.",
+      "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/761139s000lbl.pdf",
+      "quote": "Interstitial Lung Disease (ILD) and pneumonitis, including fatal cases, have been reported with ENHERTU.",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "regulatory",
+      "text": "Foundational approval: On September 25, 1998 the FDA approved trastuzumab (Herceptin, Genentech/Roche) for HER2-overexpressing metastatic breast cancer, co-approved with the HercepTest companion diagnostic \u2014 establishing the target-plus-companion-diagnostic paradigm that all downstream HER2 approvals rest on.",
+      "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11193558/",
+      "quote": "On September 25, 1998, the Food and Drug Administration (FDA) approved trastuzumab (Herceptin, Roche/Genentech)",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "regulatory",
+      "text": "Tumor-agnostic ACCELERATED APPROVAL (distinct FDA pathway): On April 5, 2024 the FDA granted accelerated approval to T-DXd for previously treated unresectable/metastatic HER2-positive (IHC 3+) solid tumors with no satisfactory alternatives \u2014 pooled across DESTINY-PanTumor02, DESTINY-Lung01 and DESTINY-CRC02. The application used Priority Review and Breakthrough Therapy Designation, and was reviewed under Project Orbis (all distinct programs, not conflated).",
+      "sourceUrl": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-fam-trastuzumab-deruxtecan-nxki-unresectable-or-metastatic-her2",
+      "quote": "On April 5, 2024, the Food and Drug Administration granted accelerated approval to fam-trastuzumab deruxtecan-nxki (Enhertu, Daiichi Sankyo, Inc.) for adult patients with unresectable or metastatic HER2-positive (IHC3+) solid tumors who have received prior systemic treatment and have no satisfactory alternative treatment options.",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "regulatory",
+      "text": "HER2-ultralow expansion (regular approval): On January 27, 2025 the FDA approved T-DXd for HR-positive, HER2-low (IHC 1+ or IHC 2+/ISH-) or HER2-ultralow (IHC 0 with membrane staining) metastatic breast cancer progressing after endocrine therapy, based on DESTINY-Breast06 (n=866; median PFS 13.2 vs 8.1 months, HR 0.62) \u2014 extending the addressable population down to near-zero HER2 expression and co-approving the Ventana PATHWAY 4B5 companion diagnostic.",
+      "sourceUrl": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-fam-trastuzumab-deruxtecan-nxki-unresectable-or-metastatic-hr-positive-her2-low-or-her2",
+      "quote": "On January 27, 2025, the Food and Drug Administration approved fam-trastuzumab deruxtecan-nxki (Enhertu, Daiichi Sankyo, Inc.) for unresectable or metastatic hormone receptor (HR)-positive, HER2-low (IHC 1+ or IHC 2+/ISH-) or HER2-ultralow (IHC 0 with membrane staining) breast cancer, as determined by an FDA-approved test, that has progressed on one or more endocrine therapies in the metastatic se",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    },
+    {
+      "silo": "regulatory",
+      "text": "Program-name precision on the HER2-positive 2L approval: In May 2022, on the strength of DESTINY-Breast03, the FDA converted T-DXd's HER2-positive metastatic breast cancer indication from accelerated approval to standard approval under Real-Time Oncology Review (RTOR) \u2014 a distinct FDA review program (established 2018), not to be conflated with Accelerated Approval, Breakthrough Therapy, or Project Orbis.",
+      "sourceUrl": "https://www.astrazeneca.com/media-centre/press-releases/2022/enhertu-approved-in-us-for-2l-her2-positive-breast-cancer.html",
+      "quote": "The approval was granted under the FDA\u2019s Real-Time Oncology Review (RTOR) programme and converts the accelerated approval of Enhertu in later line HER2-positive metastatic breast cancer to standard approval",
+      "tier": "VERIFIED",
+      "provenance": "exact"
+    }
+  ],
+  "flags": [],
+  "scorecard": {
+    "built": 11,
+    "confirmed": 11,
+    "refuted": 0,
+    "hallucinationRate": 0,
+    "redTeam": null
+  }
+}
